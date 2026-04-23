@@ -6,9 +6,9 @@ export default function Home() {
       style={{
         minHeight: '100vh',
         backgroundImage: `
-          linear-gradient(rgba(11, 29, 38, 0.85), rgba(18, 54, 71, 0.85)),
-          url('/img/bg.webp')
-        `,
+  linear-gradient(rgba(11, 29, 38, 0.85), rgba(18, 54, 71, 0.85)),
+  url('${import.meta.env.BASE_URL}img/bg.webp')`
+  ,
         backgroundSize: 'cover',
         backgroundPosition: 'center',
         backgroundRepeat: 'no-repeat',

@@ -3,50 +3,29 @@ import {
   createContext,
   useCallback,
   useContext,
-  useEffect,
   useMemo,
   useState,
 } from 'react';
 
 const CartContext = createContext(null);
 
-const STORAGE_KEY = 'omnibuild-cart';
-
-function readStoredCart() {
-  if (typeof window === 'undefined') return [];
-  try {
-    const raw = window.localStorage.getItem(STORAGE_KEY);
-    if (!raw) return [];
-    const parsed = JSON.parse(raw);
-    return Array.isArray(parsed) ? parsed : [];
-  } catch {
-    return [];
-  }
-}
-
 export function CartProvider({ children }) {
-  const [cartItems, setCartItems] = useState(readStoredCart);
+  const [cartItems, setCartItems] = useState([]);
 
-  useEffect(() => {
-    try {
-      window.localStorage.setItem(STORAGE_KEY, JSON.stringify(cartItems));
-    } catch {
-      /* ignore quota / private mode */
-    }
-  }, [cartItems]);
+  const addToCart = useCallback((product, quantity = 1) => {
+    const qty = Math.max(1, Math.floor(Number(quantity)) || 1);
 
-  const addToCart = useCallback((product) => {
     setCartItems((prev) => {
       const idx = prev.findIndex((item) => item.id === product.id);
       if (idx >= 0) {
         const next = [...prev];
         next[idx] = {
           ...next[idx],
-          quantity: next[idx].quantity + 1,
+          quantity: next[idx].quantity + qty,
         };
         return next;
       }
-      return [...prev, { ...product, quantity: 1 }];
+      return [...prev, { ...product, quantity: qty }];
     });
   }, []);
 

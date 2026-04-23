@@ -1,201 +1,578 @@
 [
   {
-    "id": 1,
-    "nombre": "Procesador AMD Ryzen 5 5600G",
-    "categoria": "Procesadores",
-    "precio": 150.00,
-    "imagen": "/img/productos/ryzen5600g.jpg",
-    "descripcion": "Potencia tu equipo con este procesador de 6 núcleos, ideal para multitarea fluida y gaming sin interrupciones."
-  },
-  {
-    "id": 2,
-    "nombre": "Procesador Intel Core i5-12400F",
-    "categoria": "Procesadores",
-    "precio": 180.00,
-    "imagen": "/img/productos/intel-i5-12400f.jpg",
-    "descripcion": "Disfruta de un rendimiento eficiente y veloz, perfecto para gaming moderno y productividad diaria."
-  },
-  {
-    "id": 3,
-    "nombre": "Procesador AMD Ryzen 7 5800X",
-    "categoria": "Procesadores",
-    "precio": 320.00,
-    "imagen": "/img/productos/ryzen7-5800x.jpg",
-    "descripcion": "Experimenta máxima potencia en tareas exigentes como edición, streaming y gaming de alto nivel."
-  },
-
-  {
-    "id": 4,
-    "nombre": "Placa Madre ASUS B450M",
-    "categoria": "Placas Madre",
-    "precio": 90.00,
-    "imagen": "/img/productos/asus-b450m.jpg",
-    "descripcion": "Construye un sistema estable y confiable con esta placa base ideal para configuraciones de gama media."
-  },
-  {
-    "id": 5,
-    "nombre": "Placa Madre MSI B550",
-    "categoria": "Placas Madre",
-    "precio": 130.00,
-    "imagen": "/img/productos/msi-b550.jpg",
-    "descripcion": "Optimiza tu rendimiento con soporte moderno y tecnología avanzada para gaming y productividad."
-  },
-  {
-    "id": 6,
-    "nombre": "Placa Madre Gigabyte Z690",
-    "categoria": "Placas Madre",
-    "precio": 250.00,
-    "imagen": "/img/productos/gigabyte-z690.jpg",
-    "descripcion": "Lleva tu PC al siguiente nivel con una placa diseñada para alto rendimiento y máxima estabilidad."
-  },
-
-  {
-    "id": 7,
-    "nombre": "Memoria RAM Kingston 8GB DDR4",
-    "categoria": "Memorias RAM",
-    "precio": 40.00,
-    "imagen": "/img/productos/kingston-8gb-ddr4.jpg",
-    "descripcion": "Mejora el rendimiento de tu equipo con esta memoria confiable para tareas diarias y uso básico."
-  },
-  {
-    "id": 8,
-    "nombre": "Memoria RAM Corsair 16GB DDR4",
-    "categoria": "Memorias RAM",
-    "precio": 80.00,
-    "imagen": "/img/productos/corsair-16gb-ddr4.jpg",
-    "descripcion": "Disfruta de una experiencia fluida en juegos y aplicaciones exigentes con mayor capacidad de memoria."
-  },
-  {
-    "id": 9,
-    "nombre": "Memoria RAM G.Skill 32GB DDR4",
-    "categoria": "Memorias RAM",
-    "precio": 150.00,
-    "imagen": "/img/productos/gskill-32gb-ddr4.jpg",
-    "descripcion": "Alcanza el máximo rendimiento en edición, diseño y multitarea intensiva sin limitaciones."
-  },
-
-  {
-    "id": 10,
-    "nombre": "Tarjeta Gráfica GTX 1660",
-    "categoria": "Tarjetas Gráficas",
-    "precio": 220.00,
-    "imagen": "/img/productos/gtx-1660.jpg",
-    "descripcion": "Disfruta de gráficos fluidos y excelente rendimiento en juegos Full HD con esta potente GPU."
-  },
-  {
-    "id": 11,
-    "nombre": "Tarjeta Gráfica RTX 3060",
-    "categoria": "Tarjetas Gráficas",
-    "precio": 320.00,
-    "imagen": "/img/productos/rtx-3060.jpg",
-    "descripcion": "Sumérgete en el gaming moderno con Ray Tracing y un rendimiento superior para juegos actuales."
-  },
-  {
-    "id": 12,
-    "nombre": "Tarjeta Gráfica RTX 4070",
-    "categoria": "Tarjetas Gráficas",
-    "precio": 600.00,
-    "imagen": "/img/productos/rtx-4070.jpg",
-    "descripcion": "Experimenta gráficos de última generación y rendimiento extremo para gaming y creación de contenido."
-  },
-
-  {
-    "id": 13,
-    "nombre": "SSD Kingston 480GB",
-    "categoria": "Almacenamiento",
-    "precio": 45.00,
-    "imagen": "/img/productos/ssd-kingston-480gb.jpg",
-    "descripcion": "Acelera tu sistema con tiempos de carga rápidos y un rendimiento eficiente en todo momento."
-  },
-  {
-    "id": 14,
-    "nombre": "SSD Samsung 1TB",
-    "categoria": "Almacenamiento",
-    "precio": 120.00,
-    "imagen": "/img/productos/ssd-samsung-1tb.jpg",
-    "descripcion": "Obtén mayor velocidad y capacidad para tus archivos, juegos y aplicaciones más exigentes."
-  },
-  {
-    "id": 15,
-    "nombre": "HDD Seagate 2TB",
-    "categoria": "Almacenamiento",
-    "precio": 70.00,
-    "imagen": "/img/productos/hdd-seagate-2tb.jpg",
-    "descripcion": "Almacena grandes cantidades de datos con confiabilidad y amplio espacio disponible."
-  },
-
-  {
-    "id": 16,
-    "nombre": "Fuente EVGA 500W",
-    "categoria": "Fuentes de Poder",
-    "precio": 50.00,
-    "imagen": "/img/productos/evga-500w.jpg",
-    "descripcion": "Garantiza una alimentación estable y segura para tu equipo con esta fuente confiable."
-  },
-  {
-    "id": 17,
-    "nombre": "Fuente Corsair 650W",
-    "categoria": "Fuentes de Poder",
-    "precio": 80.00,
-    "imagen": "/img/productos/corsair-650w.jpg",
-    "descripcion": "Optimiza el rendimiento de tu PC con una fuente eficiente y de alta calidad."
-  },
-  {
-    "id": 18,
-    "nombre": "Fuente Cooler Master 750W",
-    "categoria": "Fuentes de Poder",
-    "precio": 110.00,
-    "imagen": "/img/productos/coolermaster-750w.jpg",
-    "descripcion": "Proporciona potencia confiable para configuraciones avanzadas y equipos de alto rendimiento."
-  },
-
-  {
-    "id": 19,
-    "nombre": "Monitor LG 24 pulgadas",
-    "categoria": "Monitores",
-    "precio": 150.00,
-    "imagen": "/img/productos/lg-24-monitor.jpg",
-    "descripcion": "Disfruta de imágenes nítidas y colores vibrantes en un monitor ideal para uso diario."
-  },
-  {
-    "id": 20,
-    "nombre": "Monitor Samsung 27 pulgadas",
-    "categoria": "Monitores",
-    "precio": 220.00,
-    "imagen": "/img/productos/samsung-27-monitor.jpg",
-    "descripcion": "Amplía tu espacio de trabajo con una pantalla más grande y mayor comodidad visual."
-  },
-  {
-    "id": 21,
-    "nombre": "Monitor Gamer 144Hz",
-    "categoria": "Monitores",
-    "precio": 300.00,
-    "imagen": "/img/productos/monitor-144hz.jpg",
-    "descripcion": "Obtén máxima fluidez en tus juegos con una alta tasa de refresco diseñada para gamers."
-  },
-
-  {
-    "id": 22,
-    "nombre": "Mouse Logitech G203",
-    "categoria": "Periféricos",
-    "precio": 25.00,
-    "imagen": "/img/productos/logitech-g203.jpg",
-    "descripcion": "Control preciso y cómodo para mejorar tu experiencia en juegos y uso diario."
-  },
-  {
-    "id": 23,
-    "nombre": "Teclado Mecánico Redragon",
-    "categoria": "Periféricos",
-    "precio": 60.00,
-    "imagen": "/img/productos/redragon-teclado.jpg",
-    "descripcion": "Disfruta de una experiencia de escritura y gaming superior con este teclado mecánico."
-  },
-  {
-    "id": 24,
-    "nombre": "Audífonos HyperX Cloud",
-    "categoria": "Periféricos",
-    "precio": 90.00,
-    "imagen": "/img/productos/hyperx-cloud.jpg",
-    "descripcion": "Sumérgete en el juego con sonido envolvente y gran comodidad durante largas sesiones."
-  }
+  "id": 1,
+  "nombre": "Procesador AMD Ryzen 5 5600G",
+  "categoria": "Procesadores",
+  "precio": 150.00,
+  "imagen": "/img/productos/ryzen5600g.jpg",
+  "descripcion": "Procesador de 6 núcleos y 12 hilos con frecuencia hasta 4.4 GHz, arquitectura Zen 3 y gráficos Radeon integrados, ideal para gaming sin GPU dedicada."
+},
+{
+  "id": 2,
+  "nombre": "Procesador Intel Core i5-12400F",
+  "categoria": "Procesadores",
+  "precio": 180.00,
+  "imagen": "/img/productos/intel-i5-12400f.jpg",
+  "descripcion": "CPU de 6 núcleos y 12 hilos con frecuencia turbo de 4.4 GHz, compatible con DDR4 y DDR5, excelente para gaming y multitarea."
+},
+{
+  "id": 3,
+  "nombre": "Procesador AMD Ryzen 7 5800X",
+  "categoria": "Procesadores",
+  "precio": 320.00,
+  "imagen": "/img/productos/ryzen7-5800x.jpg",
+  "descripcion": "Procesador de 8 núcleos y 16 hilos con boost de 4.7 GHz, ideal para gaming, streaming y edición."
+},
+{
+  "id": 4,
+  "nombre": "Placa Madre ASUS B450M",
+  "categoria": "Placas Madre",
+  "precio": 90.00,
+  "imagen": "/img/productos/asus-b450m.jpg",
+  "descripcion": "Placa Micro-ATX compatible con AMD Ryzen, soporte DDR4, HDMI y expansión PCIe."
+},
+{
+  "id": 5,
+  "nombre": "Placa Madre MSI B550",
+  "categoria": "Placas Madre",
+  "precio": 130.00,
+  "imagen": "/img/productos/msi-b550.jpg",
+  "descripcion": "Placa con soporte PCIe 4.0 y DDR4, ideal para procesadores Ryzen modernos."
+},
+{
+  "id": 6,
+  "nombre": "Placa Madre Gigabyte Z690",
+  "categoria": "Placas Madre",
+  "precio": 250.00,
+  "imagen": "/img/productos/gigabyte-z690.jpg",
+  "descripcion": "Placa Intel con soporte DDR5 y PCIe 5.0 para equipos de alto rendimiento."
+},
+{
+  "id": 14,
+  "nombre": "SSD Samsung 1TB",
+  "categoria": "Almacenamiento",
+  "precio": 200.00,
+  "imagen": "/img/productos/ssd-samsung-1tb.jpg",
+  "descripcion": "SSD de 1TB con tecnología NVMe para máximo rendimiento."
+},
+{
+  "id": 15,
+  "nombre": "HDD Seagate 2TB",
+  "categoria": "Almacenamiento",
+  "precio": 100.00,
+  "imagen": "/img/productos/hdd-seagate-2tb.jpg",
+  "descripcion": "Disco duro de 2TB ideal para almacenamiento masivo."
+},
+{
+  "id": 16,
+  "nombre": "Fuente EVGA 500W",
+  "categoria": "Fuentes de Poder",
+  "precio": 50.00,
+  "imagen": "/img/productos/evga-500w.jpg",
+  "descripcion": "Fuente de 500W certificación 80 Plus, ideal para configuraciones básicas con consumo moderado."
+},
+{
+  "id": 17,
+  "nombre": "Fuente Corsair 650W",
+  "categoria": "Fuentes de Poder",
+  "precio": 80.00,
+  "imagen": "/img/productos/corsair-650w.jpg",
+  "descripcion": "Fuente de 650W con certificación 80 Plus Bronze, estabilidad y eficiencia para equipos gaming."
+},
+{
+  "id": 18,
+  "nombre": "Fuente Cooler Master 750W",
+  "categoria": "Fuentes de Poder",
+  "precio": 110.00,
+  "imagen": "/img/productos/coolermaster-750w.jpg",
+  "descripcion": "Fuente de 750W con buena eficiencia energética, ideal para configuraciones de alto rendimiento."
+},
+{
+  "id": 19,
+  "nombre": "Monitor LG 24 pulgadas",
+  "categoria": "Monitores",
+  "precio": 150.00,
+  "imagen": "/img/productos/lg-24-monitor.jpg",
+  "descripcion": "Monitor IPS de 24 pulgadas, resolución Full HD (1920x1080), ideal para oficina y entretenimiento."
+},
+{
+  "id": 20,
+  "nombre": "Monitor Samsung 27 pulgadas",
+  "categoria": "Monitores",
+  "precio": 220.00,
+  "imagen": "/img/productos/samsung-27-monitor.jpg",
+  "descripcion": "Pantalla de 27 pulgadas con resolución Full HD, mayor espacio de trabajo y buena calidad de imagen."
+},
+{
+  "id": 21,
+  "nombre": "Monitor Gamer 144Hz",
+  "categoria": "Monitores",
+  "precio": 300.00,
+  "imagen": "/img/productos/monitor-144hz.jpg",
+  "descripcion": "Monitor gaming con tasa de refresco de 144Hz y tiempo de respuesta bajo, ideal para juegos competitivos."
+},
+{
+  "id": 22,
+  "nombre": "Mouse Logitech G203",
+  "categoria": "Periféricos",
+  "precio": 25.00,
+  "imagen": "/img/productos/logitech-g203.jpg",
+  "descripcion": "Mouse gamer con sensor de alta precisión y DPI ajustable, ideal para juegos y uso diario."
+},
+{
+  "id": 23,
+  "nombre": "Teclado Mecánico Redragon",
+  "categoria": "Periféricos",
+  "precio": 60.00,
+  "imagen": "/img/productos/redragon-teclado.jpg",
+  "descripcion": "Teclado mecánico con switches de alto rendimiento, ideal para gaming y escritura rápida."
+},
+{
+  "id": 24,
+  "nombre": "Audífonos HyperX Cloud",
+  "categoria": "Periféricos",
+  "precio": 90.00,
+  "imagen": "/img/productos/hyperx-cloud.jpg",
+  "descripcion": "Audífonos con sonido envolvente, micrófono integrado y gran comodidad para largas sesiones."
+},
+{
+  "id": 25,
+  "nombre": "AMD Ryzen 5 7600X",
+  "categoria": "Procesadores",
+  "precio": 1200.00,
+  "imagen": "/img/productos/ryzen5-7600x.jpg",
+  "descripcion": "Procesador de 6 núcleos Zen 4 con frecuencia hasta 5.3 GHz, soporte DDR5 y PCIe 5.0."
+},
+{
+  "id": 26,
+  "nombre": "AMD Ryzen 7 7700X",
+  "categoria": "Procesadores",
+  "precio": 1500.00,
+  "imagen": "/img/productos/ryzen7-7700x.jpg",
+  "descripcion": "CPU de 8 núcleos y 16 hilos con boost de 5.4 GHz, excelente para gaming y multitarea avanzada."
+},
+{
+  "id": 27,
+  "nombre": "AMD Ryzen 9 7900X",
+  "categoria": "Procesadores",
+  "precio": 2000.00,
+  "imagen": "/img/productos/ryzen9-7900x.jpg",
+  "descripcion": "Procesador de 12 núcleos y 24 hilos, frecuencia hasta 5.6 GHz, ideal para trabajo profesional."
+},
+{
+  "id": 28,
+  "nombre": "Intel Core i3-12100F",
+  "categoria": "Procesadores",
+  "precio": 600.00,
+  "imagen": "/img/productos/intel-i3-12100f.jpg",
+  "descripcion": "Procesador de 4 núcleos y 8 hilos con frecuencia hasta 4.3 GHz, excelente opción económica."
+},
+{
+  "id": 29,
+  "nombre": "Intel Core i7-12700K",
+  "categoria": "Procesadores",
+  "precio": 1400.00,
+  "imagen": "/img/productos/intel-i7-12700k.jpg",
+  "descripcion": "CPU híbrido de 12 núcleos con frecuencia hasta 5.0 GHz, ideal para gaming y productividad."
+},
+{
+  "id": 30,
+  "nombre": "Intel Core i7-13700K",
+  "categoria": "Procesadores",
+  "precio": 1700.00,
+  "imagen": "/img/productos/intel-i7-13700k.jpg",
+  "descripcion": "Procesador de 16 núcleos con arquitectura híbrida y alto rendimiento en multitarea."
+},
+{
+  "id": 31,
+  "nombre": "Intel Core i9-13900K",
+  "categoria": "Procesadores",
+  "precio": 2500.00,
+  "imagen": "/img/productos/intel-i9-13900k.jpg",
+  "descripcion": "Procesador de 24 núcleos (8P + 16E) y 32 hilos con frecuencia hasta 5.8 GHz, ideal para gaming extremo y cargas profesionales."
+},
+{
+  "id": 32,
+  "nombre": "ASUS Prime B550M-A WiFi II",
+  "categoria": "Placas Madre",
+  "precio": 500.00,
+  "imagen": "/img/productos/asus-prime-b550m-a-wifi-ii.jpg",
+  "descripcion": "Placa Micro-ATX con WiFi integrado, soporte Ryzen, DDR4 y conectividad moderna para equipos actuales."
+},
+{
+  "id": 33,
+  "nombre": "MSI PRO B660M-A DDR4",
+  "categoria": "Placas Madre",
+  "precio": 600.00,
+  "imagen": "/img/productos/msi-pro-b660m-a-ddr4.jpg",
+  "descripcion": "Placa base para Intel con soporte DDR4, PCIe 4.0 y excelente estabilidad para equipos de gama media."
+},
+{
+  "id": 34,
+  "nombre": "Gigabyte B550 AORUS Elite V2",
+  "categoria": "Placas Madre",
+  "precio": 700.00,
+  "imagen": "/img/productos/gigabyte-b550-aorus-elite-v2.jpg",
+  "descripcion": "Placa con VRM reforzado, soporte PCIe 4.0 y gran disipación para alto rendimiento."
+},
+{
+  "id": 35,
+  "nombre": "ASRock B450M Steel Legend",
+  "categoria": "Placas Madre",
+  "precio": 400.00,
+  "imagen": "/img/productos/asrock-b450m-steel-legend.jpg",
+  "descripcion": "Placa Micro-ATX con diseño robusto, soporte DDR4 y buena relación calidad-precio."
+},
+{
+  "id": 36,
+  "nombre": "MSI MAG Z790 Tomahawk WiFi",
+  "categoria": "Placas Madre",
+  "precio": 900.00,
+  "imagen": "/img/productos/msi-mag-z790-tomahawk-wifi.jpg",
+  "descripcion": "Placa premium con soporte DDR5, PCIe 5.0, WiFi y alto rendimiento para procesadores Intel de última generación."
+},
+{
+  "id": 37,
+  "nombre": "Corsair Vengeance LPX 8GB DDR4",
+  "categoria": "Memorias RAM",
+  "precio": 120.00,
+  "imagen": "/img/productos/corsair-vengeance-lpx-8gb-ddr4.jpg",
+  "descripcion": "Memoria DDR4 de 8GB a 3200 MHz, ideal para equipos básicos y uso cotidiano."
+},
+{
+  "id": 38,
+  "nombre": "Kingston Fury Beast 16GB DDR4",
+  "categoria": "Memorias RAM",
+  "precio": 220.00,
+  "imagen": "/img/productos/kingston-fury-beast-16gb-ddr4.jpg",
+  "descripcion": "Memoria de 16GB DDR4 a 3200 MHz, excelente para gaming y multitarea."
+},
+{
+  "id": 39,
+  "nombre": "G.Skill Ripjaws V 16GB DDR4",
+  "categoria": "Memorias RAM",
+  "precio": 240.00,
+  "imagen": "/img/productos/gskill-ripjaws-v-16gb-ddr4.jpg",
+  "descripcion": "Memoria de alto rendimiento con baja latencia, ideal para juegos y aplicaciones exigentes."
+},
+{
+  "id": 40,
+  "nombre": "Corsair Vengeance RGB Pro 32GB DDR4",
+  "categoria": "Memorias RAM",
+  "precio": 420.00,
+  "imagen": "/img/productos/corsair-vengeance-rgb-pro-32gb-ddr4.jpg",
+  "descripcion": "Memoria de 32GB con iluminación RGB y frecuencia de 3200 MHz, ideal para setups potentes."
+},
+{
+  "id": 41,
+  "nombre": "Kingston Fury Beast 32GB DDR5",
+  "categoria": "Memorias RAM",
+  "precio": 550.00,
+  "imagen": "/img/productos/kingston-fury-beast-32gb-ddr5.jpg",
+  "descripcion": "Memoria DDR5 de última generación con mayor velocidad y eficiencia energética."
+},
+{
+  "id": 42,
+  "nombre": "G.Skill Trident Z RGB 32GB DDR4",
+  "categoria": "Memorias RAM",
+  "precio": 480.00,
+  "imagen": "/img/productos/gskill-trident-z-rgb-32gb-ddr4.jpg",
+  "descripcion": "Memoria premium de 32GB con iluminación RGB y alto rendimiento para multitarea."
+},
+{
+  "id": 43,
+  "nombre": "NVIDIA RTX 3050",
+  "categoria": "Tarjetas Gráficas",
+  "precio": 1300.00,
+  "imagen": "/img/productos/rtx-3050.jpg",
+  "descripcion": "GPU con 8GB GDDR6, soporte Ray Tracing y DLSS, ideal para gaming en 1080p."
+},
+{
+  "id": 44,
+  "nombre": "NVIDIA RTX 4060",
+  "categoria": "Tarjetas Gráficas",
+  "precio": 1800.00,
+  "imagen": "/img/productos/rtx-4060.jpg",
+  "descripcion": "Tarjeta gráfica moderna con 8GB GDDR6, gran eficiencia y rendimiento en juegos actuales."
+},
+{
+  "id": 45,
+  "nombre": "NVIDIA RTX 4060 Ti",
+  "categoria": "Tarjetas Gráficas",
+  "precio": 2200.00,
+  "imagen": "/img/productos/rtx-4060-ti.jpg",
+  "descripcion": "GPU con mayor potencia para gaming competitivo, soporte DLSS 3 y alto rendimiento gráfico."
+},
+{
+  "id": 46,
+  "nombre": "NVIDIA RTX 4080",
+  "categoria": "Tarjetas Gráficas",
+  "precio": 5200.00,
+  "imagen": "/img/productos/rtx-4080.jpg",
+  "descripcion": "GPU de alto rendimiento con 16GB GDDR6X, soporte Ray Tracing y DLSS 3, ideal para gaming en 4K."
+},
+{
+  "id": 47,
+  "nombre": "AMD Radeon RX 6600",
+  "categoria": "Tarjetas Gráficas",
+  "precio": 1400.00,
+  "imagen": "/img/productos/radeon-rx-6600.jpg",
+  "descripcion": "Tarjeta con 8GB GDDR6, excelente para gaming en 1080p con buen rendimiento y eficiencia."
+},
+{
+  "id": 48,
+  "nombre": "AMD Radeon RX 6700 XT",
+  "categoria": "Tarjetas Gráficas",
+  "precio": 2100.00,
+  "imagen": "/img/productos/radeon-rx-6700-xt.jpg",
+  "descripcion": "GPU con 12GB GDDR6, ideal para gaming en 1440p con alta calidad gráfica."
+},
+{
+  "id": 49,
+  "nombre": "AMD Radeon RX 7800 XT",
+  "categoria": "Tarjetas Gráficas",
+  "precio": 3200.00,
+  "imagen": "/img/productos/radeon-rx-7800-xt.jpg",
+  "descripcion": "Tarjeta de última generación con alto rendimiento para juegos exigentes y trabajo gráfico."
+},
+{
+  "id": 50,
+  "nombre": "Kingston NV2 500GB NVMe SSD",
+  "categoria": "Almacenamiento",
+  "precio": 180.00,
+  "imagen": "/img/productos/kingston-nv2-500gb.jpg",
+  "descripcion": "SSD NVMe de 500GB con alta velocidad de lectura y escritura, ideal para sistema operativo y programas."
+},
+{
+  "id": 51,
+  "nombre": "Kingston NV2 1TB NVMe SSD",
+  "categoria": "Almacenamiento",
+  "precio": 300.00,
+  "imagen": "/img/productos/kingston-nv2-1tb.jpg",
+  "descripcion": "Unidad NVMe de 1TB con excelente velocidad, ideal para juegos y almacenamiento rápido."
+},
+{
+  "id": 52,
+  "nombre": "Samsung 970 EVO Plus 1TB",
+  "categoria": "Almacenamiento",
+  "precio": 420.00,
+  "imagen": "/img/productos/samsung-970-evo-plus-1tb.jpg",
+  "descripcion": "SSD NVMe de alto rendimiento con velocidades de hasta 3500 MB/s, ideal para gaming y edición."
+},
+{
+  "id": 53,
+  "nombre": "Samsung 980 Pro 1TB",
+  "categoria": "Almacenamiento",
+  "precio": 520.00,
+  "imagen": "/img/productos/samsung-980-pro-1tb.jpg",
+  "descripcion": "SSD PCIe 4.0 con velocidades superiores a 7000 MB/s, ideal para máximo rendimiento."
+},
+{
+  "id": 54,
+  "nombre": "WD Blue SN570 1TB",
+  "categoria": "Almacenamiento",
+  "precio": 350.00,
+  "imagen": "/img/productos/wd-blue-sn570-1tb.jpg",
+  "descripcion": "SSD NVMe confiable de 1TB con gran rendimiento para uso diario y gaming."
+},
+{
+  "id": 55,
+  "nombre": "WD Black SN850X 1TB",
+  "categoria": "Almacenamiento",
+  "precio": 600.00,
+  "imagen": "/img/productos/wd-black-sn850x-1tb.jpg",
+  "descripcion": "SSD de alto rendimiento con tecnología PCIe 4.0, ideal para gaming extremo."
+},
+{
+  "id": 56,
+  "nombre": "Seagate Barracuda 1TB HDD",
+  "categoria": "Almacenamiento",
+  "precio": 160.00,
+  "imagen": "/img/productos/seagate-barracuda-1tb.jpg",
+  "descripcion": "Disco duro de 1TB con buena capacidad para almacenamiento general."
+},
+{
+  "id": 57,
+  "nombre": "Toshiba P300 2TB HDD",
+  "categoria": "Almacenamiento",
+  "precio": 240.00,
+  "imagen": "/img/productos/toshiba-p300-2tb.jpg",
+  "descripcion": "Disco duro de 2TB ideal para almacenamiento masivo de archivos."
+},
+{
+  "id": 58,
+  "nombre": "Corsair CV550 550W",
+  "categoria": "Fuentes de Poder",
+  "precio": 250.00,
+  "imagen": "/img/productos/corsair-cv550.jpg",
+  "descripcion": "Fuente de 550W con certificación 80 Plus Bronze, ideal para equipos de gama media."
+},
+{
+  "id": 59,
+  "nombre": "Corsair RM750e 750W",
+  "categoria": "Fuentes de Poder",
+  "precio": 520.00,
+  "imagen": "/img/productos/corsair-rm750e.jpg",
+  "descripcion": "Fuente de 750W modular con alta eficiencia y estabilidad para equipos de alto rendimiento."
+},
+{
+  "id": 60,
+  "nombre": "EVGA 600 BR 600W",
+  "categoria": "Fuentes de Poder",
+  "precio": 280.00,
+  "imagen": "/img/productos/evga-600-br.jpg",
+  "descripcion": "Fuente de 600W con certificación 80 Plus, ideal para configuraciones equilibradas."
+},
+{
+  "id": 61,
+  "nombre": "Cooler Master MWE 650 Bronze V2",
+  "categoria": "Fuentes de Poder",
+  "precio": 340.00,
+  "imagen": "/img/productos/cooler-master-mwe-650-bronze-v2.jpg",
+  "descripcion": "Fuente de 650W con certificación 80 Plus Bronze, eficiencia energética y estabilidad para equipos gaming."
+},
+{
+  "id": 62,
+  "nombre": "Thermaltake Smart BX1 750W",
+  "categoria": "Fuentes de Poder",
+  "precio": 390.00,
+  "imagen": "/img/productos/thermaltake-smart-bx1-750w.jpg",
+  "descripcion": "Fuente de 750W con buena capacidad para componentes exigentes y uso prolongado."
+},
+{
+  "id": 63,
+  "nombre": "LG UltraGear 24GN600-B",
+  "categoria": "Monitores",
+  "precio": 700.00,
+  "imagen": "/img/productos/lg-ultragear-24gn600-b.jpg",
+  "descripcion": "Monitor IPS de 24 pulgadas, resolución Full HD, 144Hz y 1ms de respuesta, ideal para gaming competitivo."
+},
+{
+  "id": 64,
+  "nombre": "LG 27MP400-B",
+  "categoria": "Monitores",
+  "precio": 650.00,
+  "imagen": "/img/productos/lg-27mp400-b.jpg",
+  "descripcion": "Pantalla de 27 pulgadas con panel IPS y resolución Full HD, ideal para trabajo y entretenimiento."
+},
+{
+  "id": 65,
+  "nombre": "Samsung Odyssey G3 24 pulgadas",
+  "categoria": "Monitores",
+  "precio": 850.00,
+  "imagen": "/img/productos/samsung-odyssey-g3-24.jpg",
+  "descripcion": "Monitor gaming de 24 pulgadas con 144Hz, panel VA y gran fluidez para juegos competitivos."
+},
+{
+  "id": 66,
+  "nombre": "Samsung Odyssey G5 27 pulgadas",
+  "categoria": "Monitores",
+  "precio": 1200.00,
+  "imagen": "/img/productos/samsung-odyssey-g5-27.jpg",
+  "descripcion": "Monitor curvo de 27 pulgadas con resolución QHD y 144Hz, ideal para experiencia inmersiva."
+},
+{
+  "id": 67,
+  "nombre": "ASUS TUF Gaming VG249Q1A",
+  "categoria": "Monitores",
+  "precio": 980.00,
+  "imagen": "/img/productos/asus-tuf-vg249q1a.jpg",
+  "descripcion": "Monitor IPS de 24 pulgadas con 165Hz y tecnología Adaptive Sync para gaming fluido."
+},
+{
+  "id": 68,
+  "nombre": "AOC 24G2 24 pulgadas",
+  "categoria": "Monitores",
+  "precio": 920.00,
+  "imagen": "/img/productos/aoc-24g2.jpg",
+  "descripcion": "Monitor gaming IPS de 24 pulgadas con 144Hz, excelente calidad de imagen y respuesta rápida."
+},
+{
+  "id": 69,
+  "nombre": "MSI G274QPF-QD 27 pulgadas",
+  "categoria": "Monitores",
+  "precio": 1450.00,
+  "imagen": "/img/productos/msi-g274qpf-qd.jpg",
+  "descripcion": "Monitor de 27 pulgadas con resolución QHD, panel IPS y alta fidelidad de color para gaming y diseño."
+},
+{
+  "id": 70,
+  "nombre": "Gigabyte G24F 2 24 pulgadas",
+  "categoria": "Monitores",
+  "precio": 890.00,
+  "imagen": "/img/productos/gigabyte-g24f-2.jpg",
+  "descripcion": "Monitor IPS de 24 pulgadas con 165Hz y excelente tiempo de respuesta para juegos rápidos."
+},
+{
+  "id": 71,
+  "nombre": "Logitech G502 Hero",
+  "categoria": "Periféricos",
+  "precio": 180.00,
+  "imagen": "/img/productos/logitech-g502-hero.jpg",
+  "descripcion": "Mouse gamer con sensor de alta precisión, hasta 16000 DPI y diseño ergonómico."
+},
+{
+  "id": 72,
+  "nombre": "Razer DeathAdder Essential",
+  "categoria": "Periféricos",
+  "precio": 140.00,
+  "imagen": "/img/productos/razer-deathadder-essential.jpg",
+  "descripcion": "Mouse ergonómico con sensor óptico de alta precisión, ideal para gaming prolongado."
+},
+{
+  "id": 73,
+  "nombre": "HyperX Pulsefire Core",
+  "categoria": "Periféricos",
+  "precio": 130.00,
+  "imagen": "/img/productos/hyperx-pulsefire-core.jpg",
+  "descripcion": "Mouse gamer con sensor óptico Pixart y diseño ligero para mayor control."
+},
+{
+  "id": 74,
+  "nombre": "Redragon K552 Kumara",
+  "categoria": "Periféricos",
+  "precio": 190.00,
+  "imagen": "/img/productos/redragon-k552-kumara.jpg",
+  "descripcion": "Teclado mecánico compacto con switches resistentes y retroiluminación LED."
+},
+{
+  "id": 75,
+  "nombre": "Logitech G213 Prodigy",
+  "categoria": "Periféricos",
+  "precio": 220.00,
+  "imagen": "/img/productos/logitech-g213-prodigy.jpg",
+  "descripcion": "Teclado con retroiluminación RGB, resistencia a salpicaduras y teclas de respuesta rápida."
+},
+{
+  "id": 76,
+  "nombre": "Razer Cynosa V2",
+  "categoria": "Periféricos",
+  "precio": 260.00,
+  "imagen": "/img/productos/razer-cynosa-v2.jpg",
+  "descripcion": "Teclado gaming con iluminación RGB y teclas silenciosas para mayor comodidad."
+},
+{
+  "id": 77,
+  "nombre": "HyperX Cloud Stinger",
+  "categoria": "Periféricos",
+  "precio": 200.00,
+  "imagen": "/img/productos/hyperx-cloud-stinger.jpg",
+  "descripcion": "Audífonos ligeros con sonido envolvente y micrófono ajustable para gaming."
+},
+{
+  "id": 78,
+  "nombre": "Logitech G435",
+  "categoria": "Periféricos",
+  "precio": 280.00,
+  "imagen": "/img/productos/logitech-g435.jpg",
+  "descripcion": "Audífonos inalámbricos con conectividad Bluetooth y gran autonomía."
+},
+{
+  "id": 79,
+  "nombre": "Razer Kraken X",
+  "categoria": "Periféricos",
+  "precio": 240.00,
+  "imagen": "/img/productos/razer-kraken-x.jpg",
+  "descripcion": "Audífonos con sonido envolvente 7.1, diseño ligero y comodidad para largas sesiones."
+}
 ]

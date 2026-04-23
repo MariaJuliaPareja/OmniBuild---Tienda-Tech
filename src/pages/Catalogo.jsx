@@ -1,14 +1,17 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import productos from '../data/products.json';
 import { useCart } from '../context/CartContext';
 
-const penFormatter = new Intl.NumberFormat('es-PE', {
-  style: 'currency',
-  currency: 'PEN',
-});
+function getImageUrl(path) {
+  return `${import.meta.env.BASE_URL}${path.replace(/^\//, '')}`;
+}
 
 export default function Catalogo() {
+  const [categoria, setCategoria] = useState('Todos');
+  const [justAddedId, setJustAddedId] = useState(null);
+  const { addToCart } = useCart();
+
   const categorias = [
     'Todos',
     'Procesadores',
@@ -18,86 +21,100 @@ export default function Catalogo() {
     'Almacenamiento',
     'Fuentes de Poder',
     'Monitores',
-    'Periféricos'
+    'Periféricos',
   ];
 
-  const [categoriaActiva, setCategoriaActiva] = useState('Todos');
-  const { addToCart, cartItems } = useCart();
-
   const productosFiltrados =
-    categoriaActiva === 'Todos'
+    categoria === 'Todos'
       ? productos
-      : productos.filter((prod) => prod.categoria === categoriaActiva);
+      : productos.filter((p) => p.categoria === categoria);
+
+  useEffect(() => {
+    if (!justAddedId) return;
+    const timer = setTimeout(() => setJustAddedId(null), 1500);
+    return () => clearTimeout(timer);
+  }, [justAddedId]);
+
+  const handleAddToCart = (product) => {
+    addToCart(product, 1);
+    setJustAddedId(product.id);
+  };
 
   return (
-    <div className="min-h-screen bg-zinc-950 px-4 py-8 text-zinc-100 sm:px-6">
-      <div className="mx-auto max-w-6xl">
-        <h1 className="mb-3 text-center text-3xl font-bold sm:text-4xl">
+    <section className="min-h-screen bg-gray-200 px-6 py-10 text-black">
+      <div className="mx-auto max-w-7xl">
+        <h1 className="mb-2 text-center text-2xl font-semibold">
           Catálogo de Productos
         </h1>
-        <p className="mx-auto mb-8 max-w-2xl text-center text-zinc-400">
+
+        <p className="mb-8 text-center text-gray-600">
           Selecciona una categoría para explorar los productos disponibles.
         </p>
 
-        <div className="mx-auto mb-8 flex max-w-4xl flex-wrap justify-center gap-3">
-        {categorias.map((cat) => (
-          <button
-            key={cat}
-            onClick={() => setCategoriaActiva(cat)}
-            className={`rounded-lg px-4 py-2 text-sm font-semibold transition-colors duration-150 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500 focus-visible:ring-offset-2 focus-visible:ring-offset-zinc-900 ${
-              categoriaActiva === cat
-                ? 'bg-indigo-600 text-zinc-100 hover:bg-indigo-700'
-                : 'bg-zinc-800 text-zinc-300 hover:bg-zinc-700'
-            }`}
-          >
-            {cat}
-          </button>
-        ))}
+        <div className="mb-10 flex flex-wrap justify-center gap-3">
+          {categorias.map((cat) => (
+            <button
+              key={cat}
+              onClick={() => setCategoria(cat)}
+              className={`rounded-lg px-4 py-2 text-sm font-medium transition ${
+                categoria === cat
+                  ? 'bg-blue-600 text-white'
+                  : 'bg-gray-300 hover:bg-gray-400'
+              }`}
+            >
+              {cat}
+            </button>
+          ))}
         </div>
 
-        <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
-        {productosFiltrados.map((prod) => (
-          <article
-            key={prod.id}
-            className="group flex h-full flex-col overflow-hidden rounded-xl border border-zinc-700 bg-zinc-900 shadow-lg transition-transform duration-200 hover:-translate-y-1"
-          >
-            <Link to={`/producto/${prod.id}`} className="block no-underline">
-              <img
-                src={prod.imagen}
-                alt={prod.nombre}
-                className="h-48 w-full bg-zinc-800 object-contain p-4"
-              />
-            </Link>
+        <div className="grid gap-8 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5">
+          {productosFiltrados.map((product) => (
+            <div
+              key={product.id}
+              className="overflow-hidden rounded-2xl border border-gray-300 bg-white shadow-md transition hover:-translate-y-1 hover:shadow-xl"
+            >
+              <Link to={`/producto/${product.id}`}>
+                <div className="flex h-60 items-center justify-center bg-white p-4">
+                  <img
+                    src={getImageUrl(product.imagen)}
+                    alt={product.nombre}
+                    className="h-full w-full object-contain bg-white"
+                  />
+                </div>
 
-            <div className="flex flex-1 flex-col p-4">
-              <Link to={`/producto/${prod.id}`} className="no-underline">
-                <h3 className="mb-1 line-clamp-2 text-lg font-semibold text-zinc-100">
-                  {prod.nombre}
-                </h3>
-                <p className="mb-3 text-sm text-zinc-400">{prod.categoria}</p>
-                <p className="mb-4 text-lg font-bold text-indigo-400">
-                  {penFormatter.format(prod.precio)}
-                </p>
+                <div className="p-4 text-center">
+                  <h3 className="text-sm font-medium text-black">
+                    {product.nombre}
+                  </h3>
+
+                  <p className="mt-1 text-xs text-gray-500">
+                    {product.categoria}
+                  </p>
+
+                  <p className="mt-2 text-base font-bold text-blue-600">
+                    S/ {product.precio}.00
+                  </p>
+                </div>
               </Link>
 
-              <button
-                type="button"
-                onClick={() => addToCart(prod)}
-                className={`mt-auto rounded-lg px-4 py-2 font-semibold transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500 focus-visible:ring-offset-2 focus-visible:ring-offset-zinc-900 ${
-                  cartItems.some((item) => item.id === prod.id)
-                    ? 'bg-emerald-700/30 text-emerald-300 hover:bg-emerald-700/45'
-                    : 'bg-indigo-600 text-zinc-100 hover:bg-indigo-700'
-                } opacity-100 md:translate-y-2 md:opacity-0 md:group-hover:translate-y-0 md:group-hover:opacity-100`}
-              >
-                {cartItems.some((item) => item.id === prod.id)
-                  ? 'En carrito ✓'
-                  : 'Agregar al carrito'}
-              </button>
+              <div className="px-4 pb-4">
+                <button
+                  onClick={() => handleAddToCart(product)}
+                  className="w-full rounded-lg bg-blue-600 py-2 text-sm font-medium text-white transition hover:bg-blue-500"
+                >
+                  Agregar al carrito
+                </button>
+
+                {justAddedId === product.id && (
+                  <p className="mt-2 text-center text-sm font-medium text-green-600">
+                    Producto agregado al carrito
+                  </p>
+                )}
+              </div>
             </div>
-          </article>
-        ))}
+          ))}
         </div>
       </div>
-    </div>
+    </section>
   );
 }
