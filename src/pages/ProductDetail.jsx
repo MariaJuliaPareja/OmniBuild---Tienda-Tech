@@ -1,129 +1,121 @@
 import { useParams, Link } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import productos from '../data/products.json';
+import { useCart } from '../context/CartContext';
+
+const penFormatter = new Intl.NumberFormat('es-PE', {
+  style: 'currency',
+  currency: 'PEN',
+});
 
 export default function ProductDetail() {
   const { id } = useParams();
   const [product, setProduct] = useState(null);
+  const [quantity, setQuantity] = useState(1);
+  const [justAdded, setJustAdded] = useState(false);
+  const { addToCart } = useCart();
 
   useEffect(() => {
     const found = productos.find((p) => p.id === Number(id));
     setProduct(found);
   }, [id]);
 
+  useEffect(() => {
+    if (!justAdded) return undefined;
+    const timerId = window.setTimeout(() => {
+      setJustAdded(false);
+    }, 1500);
+    return () => window.clearTimeout(timerId);
+  }, [justAdded]);
+
+  useEffect(() => {
+    setQuantity(1);
+  }, [id]);
+
+  const handleAddToCart = () => {
+    for (let i = 0; i < quantity; i += 1) {
+      addToCart(product);
+    }
+    setJustAdded(true);
+  };
+
   if (!product) {
     return (
-      <div style={{ padding: '40px', textAlign: 'center' }}>
-        <h2>Producto no encontrado</h2>
-        <Link to="/productos" style={{ color: '#007bff', textDecoration: 'none' }}>
+      <div className="flex min-h-screen items-center justify-center px-4">
+        <div className="text-center">
+          <h2 className="mb-3 text-2xl font-bold text-zinc-100">Producto no encontrado</h2>
+          <Link
+            to="/productos"
+            className="font-semibold text-indigo-400 no-underline transition-colors hover:text-indigo-300"
+          >
           Volver al catálogo
-        </Link>
+          </Link>
+        </div>
       </div>
     );
   }
 
   return (
-    <div style={{ padding: '40px 20px', backgroundColor: '#f8f9fa', minHeight: '80vh' }}>
-      <div
-        style={{
-          maxWidth: '1100px',
-          margin: '0 auto',
-          backgroundColor: 'white',
-          borderRadius: '16px',
-          boxShadow: '0 4px 12px rgba(0,0,0,0.08)',
-          padding: '30px'
-        }}
-      >
-        <div
-          style={{
-            display: 'grid',
-            gridTemplateColumns: '1fr 1fr',
-            gap: '40px',
-            alignItems: 'center'
-          }}
-        >
-          <div
-            style={{
-              backgroundColor: '#f0f0f0',
-              borderRadius: '12px',
-              padding: '20px',
-              textAlign: 'center'
-            }}
-          >
+    <div className="min-h-screen bg-zinc-950 px-4 py-8 text-zinc-100 sm:px-6">
+      <div className="mx-auto max-w-6xl rounded-2xl border border-zinc-700 bg-zinc-900 p-6 shadow-lg sm:p-8">
+        <div className="grid items-center gap-8 md:grid-cols-2">
+          <div className="rounded-xl bg-zinc-800 p-4">
             <img
               src={product.imagen}
               alt={product.nombre}
-              style={{
-                width: '100%',
-                maxHeight: '400px',
-                objectFit: 'cover',
-                borderRadius: '10px'
-              }}
+              className="max-h-[420px] w-full rounded-lg object-cover"
             />
           </div>
 
           <div>
-            <p
-              style={{
-                color: '#007bff',
-                fontWeight: 'bold',
-                marginBottom: '10px',
-                fontSize: '15px'
-              }}
-            >
+            <p className="mb-2 text-sm font-semibold uppercase tracking-wide text-indigo-400">
               {product.categoria}
             </p>
-
-            <h1 style={{ fontSize: '36px', marginBottom: '20px' }}>
-              {product.nombre}
-            </h1>
-
-            <p
-              style={{
-                fontSize: '32px',
-                fontWeight: 'bold',
-                color: '#111',
-                marginBottom: '20px'
-              }}
-            >
-              ${product.precio.toFixed(2)}
+            <h1 className="mb-4 text-3xl font-bold sm:text-4xl">{product.nombre}</h1>
+            <p className="mb-4 text-3xl font-bold text-zinc-100">
+              {penFormatter.format(product.precio)}
             </p>
+            <p className="mb-6 leading-relaxed text-zinc-400">{product.descripcion}</p>
 
-            <p
-              style={{
-                color: '#555',
-                lineHeight: '1.8',
-                fontSize: '17px',
-                marginBottom: '30px'
-              }}
-            >
-              {product.descripcion}
-            </p>
+            <div className="mb-5">
+              <label htmlFor="product-quantity" className="mb-2 block text-sm font-semibold text-zinc-300">
+                Cantidad
+              </label>
+              <select
+                id="product-quantity"
+                value={quantity}
+                onChange={(e) => setQuantity(Number(e.target.value))}
+                className="w-28 rounded-lg border border-zinc-700 bg-zinc-800 px-3 py-2 text-zinc-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500 focus-visible:ring-offset-2 focus-visible:ring-offset-zinc-900"
+              >
+                {Array.from({ length: 10 }, (_, index) => index + 1).map((value) => (
+                  <option key={value} value={value}>
+                    {value}
+                  </option>
+                ))}
+              </select>
+            </div>
 
-            <button
-              style={{
-                backgroundColor: '#007bff',
-                color: 'white',
-                border: 'none',
-                padding: '14px 28px',
-                borderRadius: '8px',
-                fontSize: '16px',
-                fontWeight: 'bold',
-                cursor: 'pointer',
-                marginBottom: '20px'
-              }}
-            >
-              Agregar al carrito
-            </button>
+            <div className="mb-5 flex items-center gap-3">
+              <button
+                type="button"
+                onClick={handleAddToCart}
+                className="rounded-lg bg-indigo-600 px-4 py-2 font-semibold text-zinc-100 transition-colors hover:bg-indigo-700 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500 focus-visible:ring-offset-2 focus-visible:ring-offset-zinc-900"
+              >
+                Agregar al carrito
+              </button>
+              <span
+                className={`inline-flex items-center gap-1 text-sm font-semibold text-emerald-400 transition-opacity duration-300 ${
+                  justAdded ? 'opacity-100' : 'opacity-0'
+                }`}
+              >
+                <span aria-hidden>✓</span> ¡Agregado!
+              </span>
+            </div>
 
             <div>
               <Link
                 to="/productos"
-                style={{
-                  color: '#007bff',
-                  textDecoration: 'none',
-                  fontWeight: '500'
-                }}
+                className="font-semibold text-indigo-400 no-underline transition-colors hover:text-indigo-300"
               >
                 ← Volver al catálogo
               </Link>

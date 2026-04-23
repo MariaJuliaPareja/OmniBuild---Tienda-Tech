@@ -13,10 +13,10 @@ import { useCart } from './context/CartContext';
 
 function navLinkClass(active) {
   return [
-    'pb-1 font-medium no-underline border-b-2 transition-colors duration-150',
+    'rounded-lg px-3 py-2 text-sm font-semibold no-underline transition-colors duration-150 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500 focus-visible:ring-offset-2 focus-visible:ring-offset-zinc-900',
     active
-      ? 'text-white border-sky-400'
-      : 'text-neutral-400 border-transparent hover:text-neutral-200',
+      ? 'bg-zinc-800 text-zinc-100'
+      : 'text-zinc-400 hover:bg-zinc-800 hover:text-zinc-100',
   ].join(' ');
 }
 
@@ -25,57 +25,58 @@ function Navbar() {
   const { totalItems } = useCart();
 
   return (
-    <nav className="grid grid-cols-[1fr_1fr_1fr] items-center gap-4 bg-[#111a1a] px-5 py-3">
-      <div>
-        <span className="text-lg font-bold text-white">OmniBuild</span>
-      </div>
+    <nav className="sticky top-0 z-50 border-b border-zinc-700 bg-zinc-900/80 backdrop-blur-sm">
+      <div className="mx-auto grid max-w-6xl grid-cols-[1fr_auto_1fr] items-center gap-4 px-4 py-3 sm:px-6">
+        <div>
+          <span className="text-lg font-bold text-zinc-100">OmniBuild</span>
+        </div>
+        <div className="flex flex-wrap items-center justify-center gap-2 sm:gap-3">
+          <Link to="/" className={navLinkClass(location.pathname === '/')}>
+            Inicio
+          </Link>
 
-      <div className="flex flex-wrap items-center justify-center gap-6">
-        <Link to="/" className={navLinkClass(location.pathname === '/')}>
-          Inicio
-        </Link>
-
-        <Link
-          to="/productos"
-          className={navLinkClass(location.pathname === '/productos')}
-        >
-          Productos
-        </Link>
-
-        <Link
-          to="/carrito"
-          className={`relative inline-flex items-center justify-center rounded-md p-2 text-white transition-colors duration-150 hover:bg-white/10 ${
-            location.pathname === '/carrito' ? 'ring-2 ring-sky-400/60' : ''
-          }`}
-          aria-label="Carrito de compras"
-        >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            strokeWidth="1.75"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            className="h-6 w-6"
-            aria-hidden
+          <Link
+            to="/productos"
+            className={navLinkClass(location.pathname === '/productos')}
           >
-            <circle cx="9" cy="20" r="1.25" />
-            <circle cx="17" cy="20" r="1.25" />
-            <path d="M3 4h2l1 12h12l1.5-9H7" />
-          </svg>
-          {totalItems > 0 && (
-            <span
-              key={totalItems}
-              className="absolute -right-1 -top-1 flex h-5 min-w-5 items-center justify-center rounded-full bg-red-600 px-1 text-xs font-semibold text-white shadow-sm transition-transform duration-150 animate-cart-badge-pop"
-            >
-              {totalItems > 99 ? '99+' : totalItems}
-            </span>
-          )}
-        </Link>
-      </div>
+            Productos
+          </Link>
 
-      <div />
+          <Link
+            to="/carrito"
+            className={`relative inline-flex items-center justify-center rounded-lg p-2.5 text-zinc-100 transition-colors duration-150 hover:bg-zinc-800 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500 focus-visible:ring-offset-2 focus-visible:ring-offset-zinc-900 ${
+              location.pathname === '/carrito' ? 'bg-zinc-800' : ''
+            }`}
+            aria-label="Carrito de compras"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="1.75"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              className="h-5 w-5"
+              aria-hidden
+            >
+              <circle cx="9" cy="20" r="1.25" />
+              <circle cx="17" cy="20" r="1.25" />
+              <path d="M3 4h2l1 12h12l1.5-9H7" />
+            </svg>
+            {totalItems > 0 && (
+              <span
+                key={totalItems}
+                className="absolute -right-1 -top-1 flex h-5 min-w-5 items-center justify-center rounded-full bg-red-600 px-1 text-xs font-semibold text-white shadow-sm transition-transform duration-150 animate-cart-badge-pop"
+              >
+                {totalItems > 99 ? '99+' : totalItems}
+              </span>
+            )}
+          </Link>
+        </div>
+
+        <div />
+      </div>
     </nav>
   );
 }
@@ -83,14 +84,15 @@ function Navbar() {
 function App() {
   return (
     <Router>
-      <Navbar />
-
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/productos" element={<Catalogo />} />
-        <Route path="/producto/:id" element={<ProductDetail />} />
-        <Route path="/carrito" element={<Cart />} />
-      </Routes>
+      <div className="min-h-screen bg-zinc-950 text-zinc-100">
+        <Navbar />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/productos" element={<Catalogo />} />
+          <Route path="/producto/:id" element={<ProductDetail />} />
+          <Route path="/carrito" element={<Cart />} />
+        </Routes>
+      </div>
     </Router>
   );
 }
